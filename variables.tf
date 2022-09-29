@@ -18,3 +18,8 @@ variable "task_definition" {
   description = "ECS Task Definition"
   type        = map
 }
+
+variable "asg" {
+  description = "Auto Scaling Group"
+  type        = any
+}
