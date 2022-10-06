@@ -82,6 +82,10 @@ resource "aws_launch_configuration" "ecs_launch_configuration" {
 #!/bin/bash
 echo ECS_CLUSTER=${var.cluster.name} >> /etc/ecs/ecs.config
 __EOF__
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_autoscaling_group" "autoscaling_group" {
